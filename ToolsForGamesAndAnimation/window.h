@@ -1,11 +1,9 @@
 #pragma once
 #define DISPLAY_H
 
-
-#include <windows.h>
 #include <string>
-#include <GL/GLU.h>
-#include <GL/GL.h>
+#include <Windows.h>
+#include "OpenGL.h"
 
 
 #undef main
@@ -19,6 +17,7 @@ public:
 
 	virtual ~Window();
 
+	// Getters
 	WNDCLASS getWindowClass();
 	HWND getWindow();
 	HDC getDeviceContext();
