@@ -14,7 +14,7 @@ Window::Window(int width, int height, int windowTopLeftX, int windowTopLeftY, co
 	m_WindowClass.hIcon = LoadIcon(NULL, IDI_APPLICATION);				    // type of icon to use (default app icon)
 	m_WindowClass.hInstance = hInstance;									// window instance name (given by the OS when the window is created)   
 	m_WindowClass.lpfnWndProc = WndProc;									// window callback function - this is our function below that is called whenever something happens
-	m_WindowClass.lpszClassName = TEXT("my window class name");				// our new window class name
+	m_WindowClass.lpszClassName = TEXT("WindowsClass");				        // our new window class name
 	m_WindowClass.lpszMenuName = 0;											// window menu name (0 = default menu?) 
 	m_WindowClass.style = CS_HREDRAW | CS_VREDRAW | CS_OWNDC;				// redraw if the window is resized horizontally or vertically, allow different context for each window instance
 
@@ -32,7 +32,7 @@ Window::Window(int width, int height, int windowTopLeftX, int windowTopLeftY, co
 	AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
 
 	// call CreateWindow to create the window
-	m_Window = CreateWindow(TEXT("my window class name"),		// window class to use - in this case the one we created a minute ago
+	m_Window = CreateWindow(TEXT("WindowsClass"),		// window class to use - in this case the one we created a minute ago
 		TEXT(title.c_str()),		                            // window title
 		WS_OVERLAPPEDWINDOW,						            // ??
 		windowTopLeftX, windowTopLeftY,			                // x, y
@@ -97,16 +97,7 @@ Window::Window(int width, int height, int windowTopLeftX, int windowTopLeftY, co
 	GLenum status = glewInit();
 
 	if (status != GLEW_OK)
-		std::cerr << "Glew failed to initialize" << std::endl;
-
-	// opengl display setup
-	glMatrixMode(GL_PROJECTION);	// select the projection matrix, i.e. the one that controls the "camera"
-	glLoadIdentity();				// reset it
-	gluPerspective(45.0, (float)width / (float)height, 0.1, 1000);	// set up fov, and near / far clipping planes
-	glViewport(0, 0, width, height);								// make the viewport cover the whole window
-	glClearColor(0.5, 0, 0.5, 1.0);												// set the colour used for clearing the screen
-	glEnableClientState(GL_VERTEX_ARRAY);										//	turn on the ability to do vertex arrays
-
+		FatalAppExit(NULL, "Glew Failed to initialize");
 }
 
 Window::~Window() {
@@ -119,6 +110,13 @@ Window::~Window() {
 	ReleaseDC(m_Window, m_DeviceContext);
 
 	m_msg.wParam;
+}
+
+void Window::Clear(float r, float g, float b, float a) {
+	glClearColor(r, g, b, a);
+
+	// clear screen
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
 bool Window::isClosed() {
@@ -143,7 +141,7 @@ void Window::Update() {
 		}
 	}
 
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);		// clear screen
+	// swap the buffer
 	SwapBuffers(m_DeviceContext);
 }
 

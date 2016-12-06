@@ -122,10 +122,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="mesh.cpp" />
     <ClCompile Include="shader.cpp" />
     <ClCompile Include="window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="mesh.h" />
     <ClInclude Include="OpenGL.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="window.h" />
