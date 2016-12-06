@@ -1,4 +1,4 @@
-/*#pragma once
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -17,4 +17,4 @@ private:
 
 	GLuint m_program;
 	GLuint m_shaders[NUM_SHADERS];
-};*/
+};
