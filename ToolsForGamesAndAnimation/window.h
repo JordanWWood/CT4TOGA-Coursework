@@ -18,23 +18,20 @@ public:
 	bool isClosed();
 
 	virtual ~Window();
+
+	WNDCLASS getWindowClass();
+	HWND getWindow();
+	HDC getDeviceContext();
+	HGLRC getRenderContext();
 protected:
 private:
 	Window(const Window& other) {}
-
-	/*SDL_Window* m_window;
-
-	SDL_GLContext m_glContext;*/
 	bool m_isClosed;
-
-	// -----------------------------
-	// Windows
-	// -----------------------------
 
 	MSG m_msg;
 
-	WNDCLASS m_winWindowClass;
-	HWND m_winWindow;
+	WNDCLASS m_WindowClass;
+	HWND m_Window;
 
 	HDC m_DeviceContext;
 	HGLRC m_RenderContext;
