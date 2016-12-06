@@ -19,6 +19,9 @@
     <Filter Include="Source Files\utils">
       <UniqueIdentifier>{dfa7e1e1-df11-466a-bffd-0251f3d8c4ca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\3rdparty">
+      <UniqueIdentifier>{104ae342-dbdc-4201-8c7c-c1b3ecc5621f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -33,6 +36,12 @@
     <ClCompile Include="mesh.cpp">
       <Filter>Source Files\display</Filter>
     </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Source Files\display</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_image.c">
+      <Filter>Source Files\3rdparty</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="window.h">
@@ -46,6 +55,12 @@
     </ClInclude>
     <ClInclude Include="mesh.h">
       <Filter>Source Files\display</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>Source Files\display</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>Source Files\3rdparty</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
