@@ -16,11 +16,11 @@
     <Filter Include="Source Files\display">
       <UniqueIdentifier>{31749798-52ce-437d-8277-9cf5ddfd697e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\utils">
-      <UniqueIdentifier>{dfa7e1e1-df11-466a-bffd-0251f3d8c4ca}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\3rdparty">
       <UniqueIdentifier>{104ae342-dbdc-4201-8c7c-c1b3ecc5621f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\maths">
+      <UniqueIdentifier>{82b198c4-3ed8-4042-8df9-7fe5e43e32df}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -47,9 +47,6 @@
     <ClInclude Include="window.h">
       <Filter>Source Files\display</Filter>
     </ClInclude>
-    <ClInclude Include="OpenGL.h">
-      <Filter>Source Files\utils</Filter>
-    </ClInclude>
     <ClInclude Include="shader.h">
       <Filter>Source Files\display</Filter>
     </ClInclude>
@@ -61,6 +58,9 @@
     </ClInclude>
     <ClInclude Include="stb_image.h">
       <Filter>Source Files\3rdparty</Filter>
+    </ClInclude>
+    <ClInclude Include="transform.h">
+      <Filter>Source Files\maths</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

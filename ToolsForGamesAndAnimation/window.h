@@ -3,10 +3,7 @@
 
 #include <string>
 #include <Windows.h>
-#include "OpenGL.h"
-
-
-#undef main
+#include <GL/glew.h>
 
 class Window {
 public:
