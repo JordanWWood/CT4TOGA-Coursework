@@ -21,7 +21,7 @@ class Vertex {
 class Mesh
 {
 	public:
-		Mesh(Vertex* vertices, unsigned int numVertices);
+		Mesh(Vertex* vertices, unsigned int numVertices, unsigned int* indices, unsigned int numIndices);
 
 		void Draw();
 
@@ -31,6 +31,7 @@ class Mesh
 		enum {
 			POSITION_VB,
 			TEXCOORD_VB,
+			INDEX_VB,
 
 			NUM_BUFFERS
 		};

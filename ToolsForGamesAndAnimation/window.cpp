@@ -143,6 +143,9 @@ void Window::Update() {
 
 	// swap the buffer
 	SwapBuffers(m_DeviceContext);
+
+	// keep it running at roughly 60 frames per second
+	Sleep(17);
 }
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam)
