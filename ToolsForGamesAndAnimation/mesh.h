@@ -2,6 +2,7 @@
 
 #include <glm\glm.hpp>
 #include <GL\glew.h>
+#include "shader.h"
 
 class Vertex {
 	public:
@@ -24,6 +25,7 @@ class Mesh
 		Mesh(Vertex* vertices, unsigned int numVertices, unsigned int* indices, unsigned int numIndices);
 
 		void Draw();
+		void tTransform(Transform &transform, Shader &shader, Camera &camera); //TODO Rename
 
 		virtual ~Mesh();
 	protected:

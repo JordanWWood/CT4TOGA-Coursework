@@ -5,19 +5,12 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Source Files\display">
       <UniqueIdentifier>{31749798-52ce-437d-8277-9cf5ddfd697e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\3rdparty">
-      <UniqueIdentifier>{104ae342-dbdc-4201-8c7c-c1b3ecc5621f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\maths">
       <UniqueIdentifier>{82b198c4-3ed8-4042-8df9-7fe5e43e32df}</UniqueIdentifier>
@@ -27,42 +20,30 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="window.cpp">
-      <Filter>Source Files\display</Filter>
-    </ClCompile>
     <ClCompile Include="shader.cpp">
       <Filter>Source Files\display</Filter>
     </ClCompile>
     <ClCompile Include="mesh.cpp">
       <Filter>Source Files\display</Filter>
     </ClCompile>
-    <ClCompile Include="texture.cpp">
+    <ClCompile Include="window.cpp">
       <Filter>Source Files\display</Filter>
-    </ClCompile>
-    <ClCompile Include="stb_image.c">
-      <Filter>Source Files\3rdparty</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="window.h">
-      <Filter>Source Files\display</Filter>
-    </ClInclude>
     <ClInclude Include="shader.h">
       <Filter>Source Files\display</Filter>
     </ClInclude>
     <ClInclude Include="mesh.h">
       <Filter>Source Files\display</Filter>
     </ClInclude>
-    <ClInclude Include="texture.h">
-      <Filter>Source Files\display</Filter>
-    </ClInclude>
-    <ClInclude Include="stb_image.h">
-      <Filter>Source Files\3rdparty</Filter>
-    </ClInclude>
     <ClInclude Include="transform.h">
       <Filter>Source Files\maths</Filter>
     </ClInclude>
     <ClInclude Include="camera.h">
+      <Filter>Source Files\display</Filter>
+    </ClInclude>
+    <ClInclude Include="window.h">
       <Filter>Source Files\display</Filter>
     </ClInclude>
   </ItemGroup>

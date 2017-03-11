@@ -28,7 +28,7 @@ Window::Window(int width, int height, int windowTopLeftX, int windowTopLeftY, co
 		windowTopLeftX + width,		            // far right
 		windowTopLeftY + height);	            // far left
 
-									// adjust the window, no idea why.
+	// adjust the window, no idea why.
 	AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
 
 	// call CreateWindow to create the window
@@ -65,11 +65,11 @@ Window::Window(int width, int height, int windowTopLeftX, int windowTopLeftY, co
 
 	pixelFormatDescriptor.iPixelType = PFD_TYPE_RGBA;					// red, green, blue, alpha for each pixel
 	pixelFormatDescriptor.cColorBits = 24;								// 24 bit == 8 bits for red, 8 for green, 8 for blue.
-																		// This count of color bits EXCLUDES alpha.
+	// This count of color bits EXCLUDES alpha.
 
 	pixelFormatDescriptor.cDepthBits = 32;								// 32 bits to measure pixel depth.
 
-																		// now we need to choose the closest pixel format to the one we wanted...	
+	// now we need to choose the closest pixel format to the one we wanted...	
 	int chosenPixelFormat = ChoosePixelFormat(m_DeviceContext, &pixelFormatDescriptor);
 
 	// if windows didnt have a suitable format, 0 would have been returned...

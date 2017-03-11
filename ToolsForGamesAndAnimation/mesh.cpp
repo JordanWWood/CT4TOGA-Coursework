@@ -19,6 +19,7 @@ Mesh::Mesh(Vertex* vertices, unsigned int numVertices, unsigned int* indices, un
 	}
 
 	glGenBuffers(NUM_BUFFERS, m_vertexArrayBuffers);
+
 	glBindBuffer(GL_ARRAY_BUFFER, m_vertexArrayBuffers[POSITION_VB]);
 	glBufferData(GL_ARRAY_BUFFER, numVertices * sizeof(positions[0]), &positions[0], GL_STATIC_DRAW);
 
@@ -48,4 +49,15 @@ void Mesh::Draw() {
 	glDrawElements(GL_TRIANGLES, m_drawCount, GL_UNSIGNED_INT, 0);
 
 	glBindVertexArray(0);
+}
+
+void Mesh::tTransform(Transform &transform, Shader &shader, Camera &camera) {
+	// Bind the shader
+	shader.Bind();
+
+	shader.Update(transform, camera); // Update the shader
+	this->Draw(); // Draw the object whilst the shader is bound and updated
+
+	// Unbind the shader, freeing it up for another object to transform
+	shader.UnBind();
 }
