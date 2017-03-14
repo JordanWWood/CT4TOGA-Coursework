@@ -1,5 +1,4 @@
 #include "window.h"
-#include <iostream>
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam);
 
@@ -73,8 +72,7 @@ Window::Window(int width, int height, int windowTopLeftX, int windowTopLeftY, co
 	int chosenPixelFormat = ChoosePixelFormat(m_DeviceContext, &pixelFormatDescriptor);
 
 	// if windows didnt have a suitable format, 0 would have been returned...
-	if (chosenPixelFormat == 0)
-	{
+	if (chosenPixelFormat == 0) {
 		FatalAppExit(NULL, TEXT("ChoosePixelFormat() failed!"));
 	}
 
@@ -83,8 +81,7 @@ Window::Window(int width, int height, int windowTopLeftX, int windowTopLeftY, co
 	int result = SetPixelFormat(m_DeviceContext, chosenPixelFormat, &pixelFormatDescriptor);
 
 	// if it failed...
-	if (result == NULL)
-	{
+	if (result == NULL) {
 		FatalAppExit(NULL, TEXT("SetPixelFormat() failed!"));
 	}
 
@@ -126,16 +123,13 @@ bool Window::isClosed() {
 void Window::Update() {
 	// we need to listen out for OS messages.
 	// if there is a windows message to process...
-	if (PeekMessage(&m_msg, NULL, 0, 0, PM_REMOVE))
-	{
+	if (PeekMessage(&m_msg, NULL, 0, 0, PM_REMOVE)) {
 		// and if the message is a "quit" message...
-		if (m_msg.message == WM_QUIT)
-		{
+		if (m_msg.message == WM_QUIT) {
 			m_isClosed = true;	// we want to quit asap
 		}
 		// or if it was any other type of message (i.e. one we don't care about), process it as normal...
-		else
-		{
+		else {
 			TranslateMessage(&m_msg);
 			DispatchMessage(&m_msg);
 		}
@@ -151,14 +145,13 @@ void Window::Update() {
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam)
 {
 
-	switch (message)
-	{
+	switch (message) {
 		// if they exited the window...	
-	case WM_DESTROY:
-		// post a message "quit" message to the main windows loop
-		PostQuitMessage(0);
-		return 0;
-		break;
+		case WM_DESTROY:
+			// post a message "quit" message to the main windows loop
+			PostQuitMessage(0);
+			return 0;
+			break;
 	}
 
 	// must do this as a default case (i.e. if no other event was handled)...

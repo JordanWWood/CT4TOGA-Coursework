@@ -1,13 +1,10 @@
-#version 120
+#version 330 core
 
-attribute vec3 position;
-attribute vec2 texCoord;
-
-varying vec2 texCoord0;
-
+in vec3 position;
+out vec4 vertexColor;
 uniform mat4 transform;
 
 void main() {
 	gl_Position = transform * vec4(position, 1.0);
-	texCoord0 = texCoord;
+	vertexColor = vec4(0.5f, 0.0f, 0.0f, 1.0f);
 }

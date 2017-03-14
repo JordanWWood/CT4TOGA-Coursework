@@ -13,7 +13,7 @@ public:
 		m_up = glm::vec3(0, 1, 0);
 	}
 
-	inline glm::mat4 GetViewProjection() const {
+	inline glm::mat4 GetPerspectiveViewProjection() const {
 		return m_perspective * glm::lookAt(m_position, m_position + m_forward, m_up);
 	}
 

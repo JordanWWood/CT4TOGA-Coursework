@@ -13,7 +13,6 @@ Shader::Shader(const std::string& fileName) {
 		glAttachShader(m_program, m_shaders[i]);
 
 	glBindAttribLocation(m_program, 0, "position");
-	glBindAttribLocation(m_program, 1, "texCoord");
 
 	glLinkProgram(m_program);
 	CheckShaderError(m_program, GL_LINK_STATUS, true, "Error: Program failed to Link: ");
@@ -41,8 +40,12 @@ void Shader::UnBind() {
 	glUseProgram(0);
 }
 
-void Shader::Update(const Transform& transform, const Camera& camera) {
-	glm::mat4 model = camera.GetViewProjection() * transform.GetModel();
+void Shader::Update(const Transform& transform, const Camera& camera, glm::vec3& color) {
+	glm::mat4 model = camera.GetPerspectiveViewProjection() * transform.GetModel();
+
+	// Pass the colour to the shader
+	GLint vertexColorLocation = glGetUniformLocation(m_program, "inColor");
+	glUniform4f(vertexColorLocation, color.r, color.g, color.b, 1.0f);
 
 	glUniformMatrix4fv(m_uniforms[TRANSFORM_U], 1, GL_FALSE, &model[0][0]);
 }

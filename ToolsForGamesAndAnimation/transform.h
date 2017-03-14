@@ -30,6 +30,13 @@ class Transform
 		inline void SetPos(const glm::vec3 pos) { m_pos = pos; }
 		inline void SetRot(const glm::vec3 rot) { m_rot = rot; }
 		inline void SetScale(const glm::vec3 scale) { m_scale = scale; }
+
+		Transform operator+(Transform& right) {
+			Transform t;
+			t.SetPos(this->m_pos + right.GetPos());
+
+			return t;
+		}
 	private:
 		glm::vec3 m_pos;
 		glm::vec3 m_rot;

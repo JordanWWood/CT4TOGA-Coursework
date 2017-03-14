@@ -17,34 +17,48 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Window.cpp">
+      <Filter>Source Files\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Source Files\display</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Source Files\display</Filter>
+    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="shader.cpp">
-      <Filter>Source Files\display</Filter>
-    </ClCompile>
-    <ClCompile Include="mesh.cpp">
-      <Filter>Source Files\display</Filter>
-    </ClCompile>
-    <ClCompile Include="window.cpp">
+    <ClCompile Include="Draw.cpp">
       <Filter>Source Files\display</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="shader.h">
+    <ClInclude Include="Window.h">
       <Filter>Source Files\display</Filter>
     </ClInclude>
-    <ClInclude Include="mesh.h">
+    <ClInclude Include="Shader.h">
       <Filter>Source Files\display</Filter>
     </ClInclude>
-    <ClInclude Include="transform.h">
+    <ClInclude Include="Mesh.h">
+      <Filter>Source Files\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Source Files\display</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
       <Filter>Source Files\maths</Filter>
     </ClInclude>
-    <ClInclude Include="camera.h">
+    <ClInclude Include="Draw.h">
       <Filter>Source Files\display</Filter>
     </ClInclude>
-    <ClInclude Include="window.h">
-      <Filter>Source Files\display</Filter>
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\basicShader.fs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\basicShader.vs">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

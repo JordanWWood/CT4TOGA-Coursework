@@ -14,10 +14,11 @@ public:
 	void Bind();
 	void UnBind();
 
-	void Update(const Transform& transform, const Camera& camera);
+	void Update(const Transform& transform, const Camera& camera, glm::vec3& color);
 	
 	virtual ~Shader();
 
+	inline GLuint getProgram() { return m_program; } // TODO OOPify
 protected:
 private:
 	static const unsigned int NUM_SHADERS = 2;
