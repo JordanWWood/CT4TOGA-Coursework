@@ -29,9 +29,6 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Draw.cpp">
-      <Filter>Source Files\display</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.h">
@@ -48,9 +45,6 @@
     </ClInclude>
     <ClInclude Include="Transform.h">
       <Filter>Source Files\maths</Filter>
-    </ClInclude>
-    <ClInclude Include="Draw.h">
-      <Filter>Source Files\display</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

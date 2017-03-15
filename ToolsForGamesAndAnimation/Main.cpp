@@ -4,8 +4,6 @@
 #include "texture.h"
 #include "transform.h"
 #include "camera.h"
-#include "Draw.h"
-
 // Temp
 #include <iostream>
 
@@ -67,7 +65,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLine
 
 		// mesh1
 		transform.GetPos().x = cosf(counterx);
-		transform.GetPos().z = sinCounter + 100;
+		transform.GetPos().z = sinCounter;
 		transform.GetRot().z = counterx;
 		transform.GetRot().y = counterx;
 		transform.GetRot().z = counterx;
@@ -76,14 +74,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLine
 
 		// mesh2
 		transform.GetPos().x = -cosf(counterx);
-		transform.GetPos().z = sinCounter - 1;
+		transform.GetPos().z = sinCounter;
 		transform.GetRot().x = counterx;
 		transform.GetRot().y = counterx;
 		transform.GetRot().z = counterx;
 
 		mesh2.tTransform(transform, shader, camera);
-		
-		Draw::DrawAll();
 
 		if (GetAsyncKeyState(VK_LEFT)) {
 			std::cout << counterx << std::endl;

@@ -91,6 +91,8 @@ Window::Window(int width, int height, int windowTopLeftX, int windowTopLeftY, co
 	// then we connect the two together
 	wglMakeCurrent(m_DeviceContext, m_RenderContext);
 
+	glEnable (GL_DEPTH_TEST); 
+
 	GLenum status = glewInit();
 
 	if (status != GLEW_OK)

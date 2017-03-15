@@ -1,5 +1,4 @@
 #include "mesh.h"
-#include "Draw.h"
 #include <map>
 #include <algorithm> 
 
@@ -30,8 +29,6 @@ Mesh::Mesh(Vertex* vertices, unsigned int numVertices, unsigned int* indices, un
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, numIndices * sizeof(indices[0]), &indices[0], GL_STATIC_DRAW);
 
 	glBindVertexArray(0);
-
-	Draw::AddToDraw(this);
 }
 
 
@@ -58,6 +55,7 @@ void Mesh::tTransform(Transform transform, Shader &shader, Camera &camera) {
 	}
 
 	shader.Update(transform, camera, m_color); // Update the shader with the newly created transform
+	this->dDraw();
 
 	m_lastTransform = transform; // save the last transform
 	

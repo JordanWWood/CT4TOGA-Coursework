@@ -20,6 +20,7 @@ class Mesh
 {
 	public:
 		Mesh(Vertex* vertices, unsigned int numVertices, unsigned int* indices, unsigned int numIndices, glm::vec3& color);
+		Mesh();
 
 		void dDraw();
 		void tTransform(Transform transform, Shader &shader, Camera &camera); //TODO Rename
@@ -42,9 +43,5 @@ class Mesh
 		unsigned int m_drawCount;
 
 		Transform m_lastTransform;
-
-		class Update {
-
-		};
 };
 
