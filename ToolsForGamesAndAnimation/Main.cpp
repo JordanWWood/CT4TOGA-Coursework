@@ -42,10 +42,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLine
 	Mesh mesh2(vertices1, sizeof(vertices1) / sizeof(vertices1[0]), indices1, sizeof(indices1) / sizeof(indices1[0]), glm::vec3(0.5f, 0.0f, 0.5f));
 	Shader shader("./res/basicShader");
 
-	Camera camera(glm::vec3(0, 0, -3), 70.0f, (float)WIDTH / (float)HEIGHT, 0.01f, 1000.0f);
+	Camera camera(glm::vec3(0, 0, -3), -5.0f, 5.0f, -5.0f, 5.0f, 0.01f, 1000.0f);
 	Transform transform;
 
 	float counterx = 0.0f;
+	float pos = 0.0f;
 
 	// game loop
 	while (!window.isClosed()) {
@@ -81,12 +82,19 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLine
 
 		mesh2.tTransform(transform, shader, camera);
 
+
+
 		if (GetAsyncKeyState(VK_LEFT)) {
 			std::cout << counterx << std::endl;
 			counterx += 0.01f;
 		} else if (GetAsyncKeyState(VK_RIGHT)) {
 			std::cout << counterx << std::endl;
 			counterx -= 0.01f;
+		} else if (GetAsyncKeyState('Z')) {
+			std::cout << "z" << std::endl;
+			pos = 0.01f;
+		} else if (GetAsyncKeyState('W')) {
+			std::cout << "w" << std::endl;
 		}
 			
 		// Update Window

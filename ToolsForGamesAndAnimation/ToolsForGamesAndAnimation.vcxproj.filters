@@ -9,22 +9,25 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\display">
+    <Filter Include="Source Files\Engine">
+      <UniqueIdentifier>{4f611d66-5a3f-4d88-9f44-c39c3e8410bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\display">
       <UniqueIdentifier>{31749798-52ce-437d-8277-9cf5ddfd697e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\maths">
+    <Filter Include="Source Files\Engine\maths">
       <UniqueIdentifier>{82b198c4-3ed8-4042-8df9-7fe5e43e32df}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp">
-      <Filter>Source Files\display</Filter>
+      <Filter>Source Files\Engine\display</Filter>
     </ClCompile>
     <ClCompile Include="Shader.cpp">
-      <Filter>Source Files\display</Filter>
+      <Filter>Source Files\Engine\display</Filter>
     </ClCompile>
     <ClCompile Include="Mesh.cpp">
-      <Filter>Source Files\display</Filter>
+      <Filter>Source Files\Engine\display</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
@@ -32,19 +35,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.h">
-      <Filter>Source Files\display</Filter>
+      <Filter>Source Files\Engine\display</Filter>
     </ClInclude>
     <ClInclude Include="Shader.h">
-      <Filter>Source Files\display</Filter>
+      <Filter>Source Files\Engine\display</Filter>
     </ClInclude>
     <ClInclude Include="Mesh.h">
-      <Filter>Source Files\display</Filter>
+      <Filter>Source Files\Engine\display</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h">
-      <Filter>Source Files\display</Filter>
+      <Filter>Source Files\Engine\display</Filter>
     </ClInclude>
     <ClInclude Include="Transform.h">
-      <Filter>Source Files\maths</Filter>
+      <Filter>Source Files\Engine\maths</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

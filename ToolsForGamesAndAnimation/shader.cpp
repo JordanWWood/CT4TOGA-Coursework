@@ -41,7 +41,7 @@ void Shader::UnBind() {
 }
 
 void Shader::Update(const Transform& transform, const Camera& camera, glm::vec3& color) {
-	glm::mat4 model = camera.GetPerspectiveViewProjection() * transform.GetModel();
+	glm::mat4 model = camera.GetOrthoViewProjection() * transform.GetModel();
 
 	// Pass the colour to the shader
 	GLint vertexColorLocation = glGetUniformLocation(m_program, "inColor");
