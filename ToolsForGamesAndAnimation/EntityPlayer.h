@@ -12,7 +12,6 @@ class EntityPlayer : Entity {
 		~EntityPlayer();
 
 		inline void Move(const float& speed, Shader& shader, Camera& camera) {
-
 			glm::mat4 rotZMatrix = glm::rotate(-m_loc.GetRot().z, glm::vec3(0, 0, 1));
 			glm::vec4 forwardVec = glm::vec4(0, 1, 0, 0) * rotZMatrix;
 

@@ -1,5 +1,7 @@
 #pragma once
-class EntityAsteroid : EntityAsteroid {
+#include "Entity.h"
+
+class EntityAsteroid : Entity {
 	public:
 		EntityAsteroid();
 		~EntityAsteroid();

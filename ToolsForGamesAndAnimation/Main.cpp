@@ -28,14 +28,14 @@ void GetInput(Shader& shader, Camera& camera) {
 	if (GetAsyncKeyState(VK_LEFT)) {
 		p->Rotate(-0.05, shader, camera);
 	}
-	else if (GetAsyncKeyState(VK_RIGHT)) {
+	if (GetAsyncKeyState(VK_RIGHT)) {
 		p->Rotate(0.05, shader, camera);
 	}
-	else if (GetAsyncKeyState(VK_UP)) {
+	if (GetAsyncKeyState(VK_UP)) {
 		p->Move(0.1, shader, camera);
 	}
-	else if (GetAsyncKeyState('Z')) {
-		
+	if (GetAsyncKeyState('Z')) {
+		//TODO Projectile
 	} 
 	p->Move(0, shader, camera);
 }
