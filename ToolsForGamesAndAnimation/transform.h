@@ -31,11 +31,24 @@ class Transform
 		inline void SetRot(const glm::vec3 rot) { m_rot = rot; }
 		inline void SetScale(const glm::vec3 scale) { m_scale = scale; }
 
-		Transform operator+(Transform& right) {
-			Transform t;
-			t.SetPos(this->m_pos + right.GetPos());
+		inline Transform add(Transform& right) {
+			m_pos += right.GetPos();
+			m_rot += right.GetRot();
+			m_scale += right.GetScale();
+		}
 
-			return t;
+		inline Transform subtract(Transform& right) {
+			m_pos -= right.GetPos();
+			m_rot -= right.GetRot();
+			m_scale -= right.GetScale();
+		}
+
+		friend Transform operator+(Transform left, Transform& right) {
+			return left.add(right);
+		}
+
+		friend Transform operator-(Transform left, Transform& right) {
+			return left.subtract(right);
 		}
 	private:
 		glm::vec3 m_pos;

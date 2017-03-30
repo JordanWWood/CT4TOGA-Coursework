@@ -18,6 +18,12 @@
     <Filter Include="Source Files\Engine\maths">
       <UniqueIdentifier>{82b198c4-3ed8-4042-8df9-7fe5e43e32df}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Entity">
+      <UniqueIdentifier>{09b47f18-ecdc-4160-940f-1bcdac5e43c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\maths\vector">
+      <UniqueIdentifier>{5e8087fb-7cc5-4ed5-b064-5d92426abdd0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp">
@@ -31,6 +37,21 @@
     </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityAsteroid.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityPlayer.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="vec2.cpp">
+      <Filter>Source Files\Engine\maths\vector</Filter>
+    </ClCompile>
+    <ClCompile Include="vec3.cpp">
+      <Filter>Source Files\Engine\maths\vector</Filter>
+    </ClCompile>
+    <ClCompile Include="vec4.cpp">
+      <Filter>Source Files\Engine\maths\vector</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -48,6 +69,27 @@
     </ClInclude>
     <ClInclude Include="Transform.h">
       <Filter>Source Files\Engine\maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Source Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityAsteroid.h">
+      <Filter>Source Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityPlayer.h">
+      <Filter>Source Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="vec.h">
+      <Filter>Source Files\Engine\maths\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="vec2.h">
+      <Filter>Source Files\Engine\maths\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="vec3.h">
+      <Filter>Source Files\Engine\maths\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="vec4.h">
+      <Filter>Source Files\Engine\maths\vector</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

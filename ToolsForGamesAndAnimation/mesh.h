@@ -22,7 +22,7 @@ class Mesh
 		Mesh(Vertex* vertices, unsigned int numVertices, unsigned int* indices, unsigned int numIndices, glm::vec3& color);
 		Mesh();
 
-		void dDraw();
+		void Draw();
 		void tTransform(Transform transform, Shader &shader, Camera &camera); //TODO Rename
 
 		inline Transform* GetLastTransform() { return &m_lastTransform; }

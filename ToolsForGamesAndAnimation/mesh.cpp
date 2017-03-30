@@ -36,7 +36,7 @@ Mesh::~Mesh() {
 	glDeleteVertexArrays(1, &m_vertexArrayObject);
 }
 
-void Mesh::dDraw() {
+void Mesh::Draw() {
 	glBindVertexArray(m_vertexArrayObject);
 
 	glDrawElements(GL_TRIANGLES, m_drawCount, GL_UNSIGNED_INT, 0);
@@ -45,8 +45,6 @@ void Mesh::dDraw() {
 }
 
 void Mesh::tTransform(Transform transform, Shader &shader, Camera &camera) {
-
-
 	// Bind the shader
 	shader.Bind();
 
@@ -55,7 +53,7 @@ void Mesh::tTransform(Transform transform, Shader &shader, Camera &camera) {
 	}
 
 	shader.Update(transform, camera, m_color); // Update the shader with the newly created transform
-	this->dDraw();
+	this->Draw();
 
 	m_lastTransform = transform; // save the last transform
 	
