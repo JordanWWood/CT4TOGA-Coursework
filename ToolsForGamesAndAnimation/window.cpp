@@ -27,13 +27,15 @@ Window::Window(int width, int height, int windowTopLeftX, int windowTopLeftY, co
 		windowTopLeftX + width,		            // far right
 		windowTopLeftY + height);	            // far left
 
-	// adjust the window, no idea why.
-	AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
+	// Configure the window so it cannot be resized
+	DWORD dwStyle = (WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX);
+	// Adjust the window to be the size of the rect
+	AdjustWindowRect(&rect, dwStyle, false);
 
 	// call CreateWindow to create the window
-	m_Window = CreateWindow(TEXT("WindowsClass"),		// window class to use - in this case the one we created a minute ago
+	m_Window = CreateWindow(TEXT("WindowsClass"),		        // window class to use - in this case the one we created a minute ago
 		TEXT(title.c_str()),		                            // window title
-		WS_OVERLAPPEDWINDOW,						            // ??
+		dwStyle,												// Window Style
 		windowTopLeftX, windowTopLeftY,			                // x, y
 		width, height,				                            // width and height
 		NULL, NULL,								                // ??
@@ -144,9 +146,7 @@ void Window::Update() {
 	Sleep(17);
 }
 
-LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam)
-{
-
+LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam) {
 	switch (message) {
 		// if they exited the window...	
 		case WM_DESTROY:

@@ -5,13 +5,10 @@
 #include <vector>
 #include "shader.h"
 
-
 class Vertex {
 	public:
 		Vertex(const glm::vec3& pos): pos(pos) {}
-		
-		inline glm::vec3* GetPos() { return &pos; }
-	protected:
+		inline glm::vec3* GetPos() {return &pos;}
 	private:
 		glm::vec3 pos;
 };

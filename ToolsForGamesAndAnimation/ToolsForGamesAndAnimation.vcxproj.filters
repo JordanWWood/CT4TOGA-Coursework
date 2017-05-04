@@ -53,6 +53,9 @@
     <ClCompile Include="vec4.cpp">
       <Filter>Source Files\Engine\maths\vector</Filter>
     </ClCompile>
+    <ClCompile Include="EntityProjectile.cpp">
+      <Filter>Source Files\Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.h">
@@ -90,6 +93,9 @@
     </ClInclude>
     <ClInclude Include="vec4.h">
       <Filter>Source Files\Engine\maths\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityProjectile.h">
+      <Filter>Source Files\Entity</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

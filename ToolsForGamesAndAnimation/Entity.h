@@ -1,15 +1,26 @@
 #pragma once
 #include "Mesh.h"
-
+/**
+ * Abstract class to define what all entitys should need
+ */
 class Entity {
 	public:
-		virtual void Move(const float& speed, Shader& shader, Camera& camera) {}
+		// Delete the mesh pointer when the object is deconstructed. This should be invoked when the child object is destroyed from what I understand
+		~Entity() {
+			delete(m_mesh);
+			m_mesh = NULL;
+		}
 
-		virtual void Rotate(const float& change, Shader& shader, Camera& camera) {}
+		// Virtual functions that must be part of an entity. All entitiys, at least in my situation, will need to be moved rotated and scaled.
+		virtual void Move(const float& speed) {}
+		virtual void Rotate(const float& change) {}
+		virtual void Scale(glm::vec3& change) {}
 
-		virtual void Draw(Shader shader, Camera camera) {}
+		inline void Draw(Shader& shader, Camera& camera) {
+			m_mesh->tTransform(m_loc, shader, camera);
+		} // Potentially uneeded function that allows me to draw an object without passing a transform to the shader in its last position
 
-		virtual void Scale(glm::vec3& change, Shader& shader, Camera& camera) {}
+		inline Transform GetLoc() { return m_loc; }
 	protected:
 		Mesh* m_mesh;
 		Transform m_loc;

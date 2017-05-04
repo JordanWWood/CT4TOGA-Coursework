@@ -45,8 +45,7 @@ void Mesh::Draw() {
 }
 
 void Mesh::tTransform(Transform transform, Shader &shader, Camera &camera) {
-	// Bind the shader
-	shader.Bind();
+	shader.Bind(); // Bind the shader
 
 	if (&m_lastTransform != NULL) {
 		//transform = m_current + transform;
