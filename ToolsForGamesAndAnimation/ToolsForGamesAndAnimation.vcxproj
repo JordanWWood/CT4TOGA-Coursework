@@ -126,6 +126,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AsteroidController.cpp" />
     <ClCompile Include="EntityAsteroid.cpp" />
     <ClCompile Include="EntityProjectile.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -138,6 +139,7 @@
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AsteroidController.h" />
     <ClInclude Include="EntityAsteroid.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Entity.h" />

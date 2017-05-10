@@ -14,5 +14,5 @@ EntityProjectile::EntityProjectile(const glm::vec3& pos, const glm::vec3& rot) :
 }
 
 EntityProjectile::~EntityProjectile() {
-	
+	// Leaving this here just incase the parent deconstructor isnt invoked when this object is deconstructed, couldnt find any information relating to this
 }

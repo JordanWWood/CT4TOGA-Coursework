@@ -11,10 +11,16 @@ public:
 		m_position = pos; // Camera's location in World Space
 		m_forward = glm::vec3(0, 0, 1); // Location to look at
 		m_up = glm::vec3(0, 1, 0); // Up is (0, 1, 0) to view everything upside down it would be (0, -1, 0)
+
+		m_projection = glm::vec4(Left, Right, Top, Bottom);
 	}
 
 	inline glm::mat4 GetOrthoViewProjection() const {
 		return m_ortho * glm::lookAt(glm::vec3(m_position), glm::vec3(m_forward), glm::vec3(m_up)) * glm::mat4(1.0f);
+	}
+
+	inline glm::vec4 GetOrthoViewAsVector() const {
+		return m_projection;
 	}
 
 private:
@@ -22,5 +28,7 @@ private:
 	glm::vec3 m_position;
 	glm::vec3 m_forward;
 	glm::vec3 m_up;
+
+	glm::vec4 m_projection;
 };
 

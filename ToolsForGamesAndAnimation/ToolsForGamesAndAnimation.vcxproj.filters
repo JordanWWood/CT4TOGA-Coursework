@@ -24,6 +24,9 @@
     <Filter Include="Source Files\Engine\maths\vector">
       <UniqueIdentifier>{5e8087fb-7cc5-4ed5-b064-5d92426abdd0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Controllers">
+      <UniqueIdentifier>{d7abb869-75d6-4dab-834f-6974c93d3f2e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp">
@@ -34,9 +37,6 @@
     </ClCompile>
     <ClCompile Include="Mesh.cpp">
       <Filter>Source Files\Engine\display</Filter>
-    </ClCompile>
-    <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EntityAsteroid.cpp">
       <Filter>Source Files\Entity</Filter>
@@ -55,6 +55,12 @@
     </ClCompile>
     <ClCompile Include="EntityProjectile.cpp">
       <Filter>Source Files\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="AsteroidController.cpp">
+      <Filter>Source Files\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +102,9 @@
     </ClInclude>
     <ClInclude Include="EntityProjectile.h">
       <Filter>Source Files\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="AsteroidController.h">
+      <Filter>Source Files\Controllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

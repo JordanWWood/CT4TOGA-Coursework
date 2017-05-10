@@ -21,6 +21,7 @@ class EntityPlayer : Entity {
 
 		inline void SetHealth(float health) { m_health = health; }
 		inline float GetHealth() { return m_health; }
+		inline Transform GetLoc() { return m_loc; }
 
 		// The current velocity of the player
 		glm::vec2 velocity;
